@@ -50,6 +50,8 @@ services:
     image: grafana/grafana
     volumes:
       - ./docker/grafana/grafana-datasources.yml:/etc/grafana/provisioning/datasources/datasources.yml
+      - ./docker/grafana/dashboard.yaml:/etc/grafana/provisioning/dashboards/main.yaml
+      - ./docker/grafana/dashboards:/var/lib/grafana/dashboards
     ports:
       - "3000:3000"
 
