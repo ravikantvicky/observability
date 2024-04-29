@@ -46,7 +46,7 @@ public class OpenTelemetryConfig {
         return BatchLogRecordProcessor
                 .builder(
                         OtlpGrpcLogRecordExporter.builder()
-                                .setEndpoint("http://localhost:4317")
+                                .setEndpoint("http://otel-collector:4317")
                                 .build())
                 .build();
     }

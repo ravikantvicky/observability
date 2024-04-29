@@ -79,3 +79,23 @@ services:
       - 'POSTGRES_USER=hms'
       - 'POSTGRES_DB=hmsdb'
       - 'POSTGRES_PASSWORD=Hms@123'
+
+  hms:
+    build:
+      context: ./hms
+      dockerfile: Dockerfile
+    ports:
+      - '8080:8080'
+    depends_on:
+      - database
+      - otel-collector
+
+  hms-hr:
+    build:
+      context: ./hms-hr
+      dockerfile: Dockerfile
+    ports:
+      - '8090:8090'
+    depends_on:
+      - database
+      - otel-collector

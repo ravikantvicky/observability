@@ -60,7 +60,7 @@ public class DepartmentService {
 
         // Fetch employees
         log.info("Fetching Employee details for department: {}", departmentDetails.getName());
-        String url = "http://localhost:8090/employee/department/" + id;
+        String url = "http://hms-hr:8090/employee/department/" + id;
         ResponseEntity<List<HmsEmployee>> employeesResponse = restTemplate.exchange(url, HttpMethod.GET,
                 null, new ParameterizedTypeReference<>() {
                 });
